@@ -1,1 +1,1 @@
-"# ffmpeg-restream-generator" 
+# ffmpeg-restream-generator
