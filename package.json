@@ -19,10 +19,10 @@
     "@angular/platform-browser": "~11.2.14",
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
-    "@ionic/angular": "^5.5.2",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "@ionic/angular": "^5.9.4",
+    "rxjs": "~6.6.7",
+    "tslib": "^2.4.0",
+    "zone.js": "~0.11.8"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.4",
