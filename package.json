@@ -36,7 +36,7 @@
     "@ionic/angular-toolkit": "^8.0.0",
     "@types/jasmine": "~4.3.1",
     "@types/jasminewd2": "~2.0.10",
-    "@types/node": "^18.14.1",
+    "@types/node": "^18.14.2",
     "cypress": "latest",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.1",
