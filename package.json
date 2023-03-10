@@ -31,7 +31,7 @@
     "@angular/cli": "^15.2.2",
     "@angular/compiler": "^15.2.2",
     "@angular/compiler-cli": "^15.2.2",
-    "@angular/language-service": "^15.2.1",
+    "@angular/language-service": "^15.2.2",
     "@cypress/schematic": "^2.5.0",
     "@ionic/angular-toolkit": "^8.0.0",
     "@types/jasmine": "~4.3.1",
