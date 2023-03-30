@@ -30,7 +30,7 @@
     "@angular-devkit/build-angular": "^15.2.4",
     "@angular/cli": "^15.2.4",
     "@angular/compiler": "^15.2.4",
-    "@angular/compiler-cli": "^15.2.4",
+    "@angular/compiler-cli": "^15.2.5",
     "@angular/language-service": "^15.2.5",
     "@cypress/schematic": "^2.5.0",
     "@ionic/angular-toolkit": "^9.0.0",
