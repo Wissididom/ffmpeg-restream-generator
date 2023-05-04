@@ -1,3 +1,10 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-generator',
+  templateUrl: 'generator.page.html',
+  styleUrls: ['generator.page.scss']
+})
 export class GeneratorPage {
   private inputStream: string = 'rtmp://localhost:1935/live/app';
   private streamTargets: {id: number, formatEnabled: boolean, format: string, hlsTime: number, hlsPlaylistType: string, outputStream: string}[] = [];
