@@ -6,14 +6,8 @@ import { GeneratorPage } from './generator.page';
 
 import { GeneratorPageRoutingModule } from './generator-routing.module';
 
-
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    GeneratorPageRoutingModule
-  ],
-  declarations: [GeneratorPage]
+  imports: [CommonModule, FormsModule, IonicModule, GeneratorPageRoutingModule],
+  declarations: [GeneratorPage],
 })
 export class GeneratorPageModule {}

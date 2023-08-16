@@ -10,7 +10,7 @@ describe('GeneratorPage', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [GeneratorPage],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(GeneratorPage);

@@ -3,24 +3,34 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-generator',
   templateUrl: 'generator.page.html',
-  styleUrls: ['generator.page.scss']
+  styleUrls: ['generator.page.scss'],
 })
 export class GeneratorPage {
   public inputStream: string = 'rtmp://localhost:1935/live/app';
-  public streamTargets: {id: number, formatEnabled: boolean, format: string, hlsTime: number, hlsPlaylistType: string, outputStream: string}[] = [];
+  public streamTargets: {
+    id: number;
+    formatEnabled: boolean;
+    format: string;
+    hlsTime: number;
+    hlsPlaylistType: string;
+    outputStream: string;
+  }[] = [];
   public command: string = '';
 
   constructor() {}
 
   newOutputStream() {
-    let nextId = this.streamTargets.length == 0 ? 0 : this.streamTargets[this.streamTargets.length - 1].id + 1;
+    let nextId =
+      this.streamTargets.length == 0
+        ? 0
+        : this.streamTargets[this.streamTargets.length - 1].id + 1;
     this.streamTargets.push({
       id: nextId,
       formatEnabled: false,
       format: 'flv',
       hlsTime: 6,
       hlsPlaylistType: 'event',
-      outputStream: ''
+      outputStream: '',
     });
   }
 

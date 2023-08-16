@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      FFMPEG Restream Generator
-    </ion-title>
+    <ion-title> FFMPEG Restream Generator </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +10,10 @@
       <ion-card-title>Input Stream</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-input placeholder="Input Stream where ffmpeg gets the data to be streamed" [(ngModel)]="inputStream"></ion-input>
+      <ion-input
+        placeholder="Input Stream where ffmpeg gets the data to be streamed"
+        [(ngModel)]="inputStream"
+      ></ion-input>
     </ion-card-content>
   </ion-card>
   <ion-card *ngFor="let streamTarget of streamTargets; let i = index;">
@@ -22,26 +23,49 @@
     <ion-card-content>
       <ion-item>
         <ion-label>Format</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="streamTarget.formatEnabled"></ion-checkbox>
+        <ion-checkbox
+          slot="end"
+          [(ngModel)]="streamTarget.formatEnabled"
+        ></ion-checkbox>
       </ion-item>
       <ion-item *ngIf="streamTarget.formatEnabled">
         <ion-label>Format</ion-label>
         <ion-input value="flv" [(ngModel)]="streamTarget.format"></ion-input>
       </ion-item>
-      <ion-item *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'">
+      <ion-item
+        *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'"
+      >
         <ion-label>HLS Time</ion-label>
-        <ion-input type="number" value="6" [(ngModel)]="streamTarget.hlsTime"></ion-input>
+        <ion-input
+          type="number"
+          value="6"
+          [(ngModel)]="streamTarget.hlsTime"
+        ></ion-input>
       </ion-item>
-      <ion-item *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'">
+      <ion-item
+        *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'"
+      >
         <ion-label>HLS Playlist Type</ion-label>
-        <ion-input value="event" [(ngModel)]="streamTarget.hlsPlaylistType"></ion-input>
+        <ion-input
+          value="event"
+          [(ngModel)]="streamTarget.hlsPlaylistType"
+        ></ion-input>
       </ion-item>
-      <ion-input placeholder="Output Stream #{{streamTarget.id + 1}} where ffmpeg sends the data to be streamed" [(ngModel)]="streamTarget.outputStream"></ion-input>
-      <ion-button expand="block" color="danger" (click)="deleteOutputStream(i)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+      <ion-input
+        placeholder="Output Stream #{{streamTarget.id + 1}} where ffmpeg sends the data to be streamed"
+        [(ngModel)]="streamTarget.outputStream"
+      ></ion-input>
+      <ion-button expand="block" color="danger" (click)="deleteOutputStream(i)"
+        ><ion-icon name="trash-outline"></ion-icon
+      ></ion-button>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="block" (click)="newOutputStream()">New Output Stream</ion-button>
-  <ion-button expand="block" (click)="generateCommand()">Generate Command</ion-button>
+  <ion-button expand="block" (click)="newOutputStream()"
+    >New Output Stream</ion-button
+  >
+  <ion-button expand="block" (click)="generateCommand()"
+    >Generate Command</ion-button
+  >
   <ion-card *ngIf="command != ''">
     <ion-card-header>
       <ion-card-title>Generated Command</ion-card-title>
