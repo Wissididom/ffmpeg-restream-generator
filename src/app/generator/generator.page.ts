@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['generator.page.scss']
 })
 export class GeneratorPage {
-  private inputStream: string = 'rtmp://localhost:1935/live/app';
-  private streamTargets: {id: number, formatEnabled: boolean, format: string, hlsTime: number, hlsPlaylistType: string, outputStream: string}[] = [];
-  private command: string = '';
+  public inputStream: string = 'rtmp://localhost:1935/live/app';
+  public streamTargets: {id: number, formatEnabled: boolean, format: string, hlsTime: number, hlsPlaylistType: string, outputStream: string}[] = [];
+  public command: string = '';
 
   constructor() {}
 
@@ -37,7 +37,7 @@ export class GeneratorPage {
     this.command = result;
   }
 
-  deleteOutputStream(index) {
+  deleteOutputStream(index: number) {
     this.streamTargets.splice(index, 1);
     for (let i = 0; i < this.streamTargets.length; i++) {
       this.streamTargets[i].id = i;
