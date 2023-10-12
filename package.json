@@ -19,7 +19,7 @@
     "@angular/core": "^16.2.8",
     "@angular/forms": "^16.2.8",
     "@angular/platform-browser": "^16.2.8",
-    "@angular/platform-browser-dynamic": "^16.2.8",
+    "@angular/platform-browser-dynamic": "^16.2.9",
     "@angular/router": "^16.2.8",
     "@capacitor/app": "5.0.6",
     "@capacitor/core": "5.5.0",
