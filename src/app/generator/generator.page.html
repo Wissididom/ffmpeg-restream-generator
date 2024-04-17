@@ -22,11 +22,10 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-label>Format</ion-label>
         <ion-checkbox
-          slot="end"
+          labelPlacement="end"
           [(ngModel)]="streamTarget.formatEnabled"
-        ></ion-checkbox>
+        >Format</ion-checkbox>
       </ion-item>
       <ion-item *ngIf="streamTarget.formatEnabled">
         <ion-label>Format</ion-label>
