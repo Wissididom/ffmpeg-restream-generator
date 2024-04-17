@@ -28,14 +28,13 @@
         >Format</ion-checkbox>
       </ion-item>
       <ion-item *ngIf="streamTarget.formatEnabled">
-        <ion-label>Format</ion-label>
-        <ion-input value="flv" [(ngModel)]="streamTarget.format"></ion-input>
+        <ion-input label="Format" value="flv" [(ngModel)]="streamTarget.format"></ion-input>
       </ion-item>
       <ion-item
         *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'"
       >
-        <ion-label>HLS Time</ion-label>
         <ion-input
+          label="HLS Time"
           type="number"
           value="6"
           [(ngModel)]="streamTarget.hlsTime"
@@ -44,8 +43,8 @@
       <ion-item
         *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'"
       >
-        <ion-label>HLS Playlist Type</ion-label>
         <ion-input
+          label="HLS Playlist Type"
           value="event"
           [(ngModel)]="streamTarget.hlsPlaylistType"
         ></ion-input>
