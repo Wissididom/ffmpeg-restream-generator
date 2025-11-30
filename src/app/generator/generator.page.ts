@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-generator',
-  templateUrl: 'generator.page.html',
-  styleUrls: ['generator.page.scss'],
+    selector: 'app-generator',
+    templateUrl: 'generator.page.html',
+    styleUrls: ['generator.page.scss'],
+    standalone: false
 })
 export class GeneratorPage {
   public inputStream: string = 'rtmp://localhost:1935/live/app';

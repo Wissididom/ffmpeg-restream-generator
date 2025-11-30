@@ -16,69 +16,77 @@
       ></ion-input>
     </ion-card-content>
   </ion-card>
-  <ion-card *ngFor="let streamTarget of streamTargets; let i = index;">
-    <ion-card-header>
-      <ion-card-title>Output Stream #{{streamTarget.id + 1}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-checkbox
-          labelPlacement="start"
-          [(ngModel)]="streamTarget.formatEnabled"
-        >Format</ion-checkbox>
-      </ion-item>
-      <ion-item *ngIf="streamTarget.formatEnabled">
-        <ion-input label="Format" value="flv" [(ngModel)]="streamTarget.format"></ion-input>
-      </ion-item>
-      <ion-item
-        *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'"
-      >
+  @for (streamTarget of streamTargets; track streamTarget; let i = $index) {
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Output Stream #{{streamTarget.id + 1}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-checkbox
+            labelPlacement="start"
+            [(ngModel)]="streamTarget.formatEnabled"
+          >Format</ion-checkbox>
+        </ion-item>
+        @if (streamTarget.formatEnabled) {
+          <ion-item>
+            <ion-input label="Format" value="flv" [(ngModel)]="streamTarget.format"></ion-input>
+          </ion-item>
+        }
+        @if (streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls') {
+          <ion-item
+            >
+            <ion-input
+              label="HLS Time"
+              type="number"
+              value="6"
+              [(ngModel)]="streamTarget.hlsTime"
+            ></ion-input>
+          </ion-item>
+        }
+        @if (streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls') {
+          <ion-item
+            >
+            <ion-input
+              label="HLS Playlist Type"
+              value="event"
+              [(ngModel)]="streamTarget.hlsPlaylistType"
+            ></ion-input>
+          </ion-item>
+        }
         <ion-input
-          label="HLS Time"
-          type="number"
-          value="6"
-          [(ngModel)]="streamTarget.hlsTime"
+          placeholder="Output Stream #{{streamTarget.id + 1}} where ffmpeg sends the data to be streamed"
+          [(ngModel)]="streamTarget.outputStream"
         ></ion-input>
-      </ion-item>
-      <ion-item
-        *ngIf="streamTarget.formatEnabled && streamTarget.format.toLowerCase() == 'hls'"
-      >
-        <ion-input
-          label="HLS Playlist Type"
-          value="event"
-          [(ngModel)]="streamTarget.hlsPlaylistType"
-        ></ion-input>
-      </ion-item>
-      <ion-input
-        placeholder="Output Stream #{{streamTarget.id + 1}} where ffmpeg sends the data to be streamed"
-        [(ngModel)]="streamTarget.outputStream"
-      ></ion-input>
-      <ion-button expand="block" color="danger" (click)="deleteOutputStream(i)"
-        ><ion-icon name="trash-outline"></ion-icon
-      ></ion-button>
-    </ion-card-content>
-  </ion-card>
+        <ion-button expand="block" color="danger" (click)="deleteOutputStream(i)"
+          ><ion-icon name="trash-outline"></ion-icon
+        ></ion-button>
+      </ion-card-content>
+    </ion-card>
+  }
   <ion-button expand="block" (click)="newOutputStream()"
     >New Output Stream</ion-button
-  >
-  <ion-button expand="block" (click)="generateCommand()"
-    >Generate Command</ion-button
-  >
-  <ion-card *ngIf="command != ''">
-    <ion-card-header>
-      <ion-card-title>Generated Command</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-label>{{command}}</ion-label>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Server + StreamKey to RTMP</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      URL/streamkey<br />
-      Example: rtmp://a.rtmp.youtube.com/live2/streamkey
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+    >
+    <ion-button expand="block" (click)="generateCommand()"
+      >Generate Command</ion-button
+      >
+      @if (command != '') {
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Generated Command</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>{{command}}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      }
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Server + StreamKey to RTMP</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          URL/streamkey<br />
+          Example: rtmp://a.rtmp.youtube.com/live2/streamkey
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
