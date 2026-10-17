@@ -42,7 +42,7 @@
     "@angular/cli": "^22.2.3",
     "@angular/compiler-cli": "^22.2.3",
     "@angular/language-service": "^22.2.3",
-    "@capacitor/cli": "7.4.4",
+    "@capacitor/cli": "7.6.9",
     "@ionic/angular-toolkit": "^12.3.0",
     "@types/jasmine": "~5.1.4",
     "@types/node": "^24.10.1",
