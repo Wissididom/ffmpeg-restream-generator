@@ -63,5 +63,12 @@
     "ts-node": "^10.9.2",
     "typescript": "~5.9.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "esbuild@0.26.0": true,
+    "esbuild@0.25.12": true,
+    "lmdb@3.4.3": true,
+    "msgpackr-extract@3.0.3": true
+  }
 }
