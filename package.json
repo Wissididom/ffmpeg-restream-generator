@@ -44,7 +44,7 @@
     "eslint-plugin-jsdoc": "65.3.11",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "typescript": "~6.0.3",
-    "vitest": "^5.0.0"
+    "vitest": "^5.1.0"
   },
   "description": "An Ionic project",
   "allowScripts": {
